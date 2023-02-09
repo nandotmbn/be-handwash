@@ -22,7 +22,7 @@ var handwashCollection *mongo.Collection = configs.GetCollection(configs.DB, "ha
 func RegisterHandwash() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-		var handwash models.Handwash
+		var handwash views.PayloadRetriveId
 		defer cancel()
 		c.BindJSON(&handwash)
 
